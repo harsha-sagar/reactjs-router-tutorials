@@ -1,7 +1,35 @@
 import React from 'react';
 import { Router, Route, Link, Redirect, hashHistory } from 'react-router';
 
-const Home = () => <div><h1>Home</h1><Links /></div>;
+class Home extends React.Component {
+    componentWillMount(){
+        this.context.router.setRouteLeaveHook(this.props.route, this.routeWillLeave);
+/*
+    2. registering for handling route leaving
+       a. "routeWillLeave" is the custom call back function which we implement
+*/
+    }
+
+    routeWillLeave(nextLocation){
+console.log(`leaving Home for ${nextLocation.pathname}`);
+    }
+/*
+    1. route leaving handler
+       a. "nextLocation" object cantains the details of the next route to be switched/activated
+*/
+
+    render(){
+        return <div><h1>Home</h1><Links /></div>;
+    }
+}
+
+Home.contextTypes = {
+    router: React.PropTypes.object.isRequired
+};
+/*
+    3. Without declaring contextTypes, "context" cannot be used
+*/
+
 const About = () => <div><h1>About</h1><Links /></div>;
 const Contact = () => <div><h1>Contact</h1><Links /></div>;
 
