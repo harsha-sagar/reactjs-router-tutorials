@@ -7,10 +7,19 @@ const Contact = () => <div><h1>Contact</h1><Links /></div>;
 
 const Links = () =>
     <nav>
-        <Link to="/">Home</Link><br/>
-        <Link to="/about">About</Link><br/>
-        <Link to="/contact">Contact</Link><br/>
+        <Link activeClassName="active" to="/">Home</Link><br/>
+        <Link activeClassName="active" to="/about">About</Link><br/>
+        <Link activeClassName="active" to="/contact">Contact</Link><br/>
     </nav>
+    // <nav>
+    //     <Link activeStyle={{color: 'green'}} to="/">Home</Link><br/>
+    //     <Link activeStyle={{color: 'green'}} to="/about">About</Link><br/>
+    //     <Link activeStyle={{color: 'green'}} to="/contact">Contact</Link><br/>
+    // </nav>
+/*
+    lines 14-18 shows another approach for lines 9-13
+    comment 9-13 lines, uncommenting the lines 14-18
+*/
 
 class App extends React.Component {
     render(){
