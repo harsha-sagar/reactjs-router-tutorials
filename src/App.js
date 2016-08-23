@@ -1,24 +1,20 @@
 import React from 'react';
 import { Router, Route, Link, hashHistory } from 'react-router';
 
-const Home = () => <div><h1>Home</h1><Links /></div>;
-const About = () => <div><h1>About</h1><Links /></div>;
-const Contact = () => <div><h1>Contact</h1><Links /></div>;
+const Home = (props) => <div><h1>{props.location.query.message || "Hello world"}</h1><Links/></div>;
 
 const Links = () =>
     <nav>
-        <Link to="/">Home</Link><br/>
-        <Link to="/about">About</Link><br/>
-        <Link to="/contact">Contact</Link><br/>
+        <Link to={{pathname: '/', query:{message: 'hello sagar'}}}>hello sagar</Link><br/>
+        <Link to={{pathname: '/', query:{message: 'hi harsha'}}}>hi harsha</Link><br/>
     </nav>
+
 
 class App extends React.Component {
     render(){
         return (
             <Router history={ hashHistory }>
                 <Route path="/" component={Home}></Route>
-                <Route path="/about" component={About}></Route>
-                <Route path="/contact" component={Contact}></Route>
             </Router>
         );
     }
