@@ -1,9 +1,11 @@
 import React from 'react';
 import { Router, Route, Link, Redirect, hashHistory } from 'react-router';
 
-const Home = () => <div><h1>Home</h1><Links /></div>;
-const About = () => <div><h1>About</h1><Links /></div>;
-const Contact = () => <div><h1>Contact</h1><Links /></div>;
+const Home = (props) => <div><h1>{props.location.query.message || "Hello world"}</h1><Links/></div>;
+
+const About = () => <div><h1>This is About page</h1><Links/></div>;
+
+const Contact = () => <div><h1>This is Contact page</h1><Links/></div>;
 
 const Links = () =>
     <nav>
@@ -12,6 +14,7 @@ const Links = () =>
         <Link to="/about-us">About us</Link><br/>
         <Link to="/contact">Contact</Link><br/>
     </nav>
+
 
 class App extends React.Component {
     render(){
