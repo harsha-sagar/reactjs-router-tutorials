@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, Link, hashHistory } from 'react-router';
+import { Router, Route, Link, IndexRoute, hashHistory } from 'react-router';
 
 const Home = (props) => <div><h1>{props.location.query.message || "Hello world"}</h1><Links/></div>;
 
