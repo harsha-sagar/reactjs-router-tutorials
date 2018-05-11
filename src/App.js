@@ -33,6 +33,7 @@ Home.contextTypes = {
 const About = () => <div><h1>About</h1><Links /></div>;
 const Contact = () => <div><h1>Contact</h1><Links /></div>;
 
+
 const Links = () =>
     <nav>
         <Link to="/">Home</Link><br/>
@@ -40,6 +41,7 @@ const Links = () =>
         <Link to="/about-us">About us</Link><br/>
         <Link to="/contact">Contact</Link><br/>
     </nav>
+
 
 class App extends React.Component {
     render(){
