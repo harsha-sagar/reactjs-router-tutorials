@@ -1,3 +1,3 @@
-### Summary:
-Routing across the Reactjs application  
-Different branches corresponds to play around with different features of routing
+### Summary -  
+- Playing around concepts of Reactjs & React-router libraries.
+- Different branches corresponds to different concepts learnt & concerned examples.
